@@ -1,0 +1,40 @@
+#!/bin/bash
+tbdir=$HOME/.thunderbird
+profilename=$(cat $tbdir/profiles.ini | grep Path | cut -d '=' -f 2)
+profiledir=$tbdir/$profilename
+mv $profiledir $profiledir-backup
+mkdir $profiledir
+
+#Folder
+cp -r $profiledir-backup/calendar-data $profiledir #synchronisierte Kalender-Einträge
+cp -r $profiledir-backup/chrome $profiledir #Themes
+cp -r $profiledir-backup/extensions $profiledir #Erweiterungen
+cp -r $profiledir-backup/ImapMail $profiledir #Emails
+cp -r $profiledir-backup/Mail $profiledir #Emails
+
+#Files
+cp $profiledir-backup/abook.mab $profiledir #Adressbuch
+cp $profiledir-backup/addons.json $profiledir #Addons
+cp $profiledir-backup/addons.sqlite $profiledir #Addons
+cp $profiledir-backup/addonStartup.json.lz4 $profiledir #aktivierte Addons
+cp $profiledir-backup/cert_override.txt $profiledir #Zertifikat-Ausnahmen
+#cp $profiledir-backup/cert8.db $profiledir #Sicherheitszertifikats-Einstellungen
+cp $profiledir-backup/cert9.db $profiledir #Sicherheitszertifikats-Einstellungen
+cp $profiledir-backup/cookies.sqlite $profiledir #Cookies
+cp $profiledir-backup/enigmail.sqlite $profiledir #Cookies
+cp $profiledir-backup/extensions.json $profiledir
+cp $profiledir-backup/extensions.sqlite $profiledir
+cp $profiledir-backup/extension-preferences.json $profiledir
+cp $profiledir-backup/impab.mab #importiertes Adressbuch
+#cp $profiledir-backup/key3.db $profiledir
+cp $profiledir-backup/key4.db $profiledir #Passwörter
+cp $profiledir-backup/logins.json $profiledir #Passwörter
+cp $profiledir-backup/mailViews.dat $profiledir #Nachrichten-Darstellung
+cp $profiledir-backup/mimeTypes.rdf $profiledir
+cp $profiledir-backup/persdict.dat $profiledir #persönliches Wörterbuch
+cp $profiledir-backup/prefs.js $profiledir #Benutzereinstellungen
+cp $profiledir-backup/session.json $profiledir #offene Tabs
+cp $profiledir-backup/signons.sqlite $profiledir
+cp $profiledir-backup/training.dat $profiledir #Junk-Filter-Trainingsdateien
+cp $profiledir-backup/user.js $profiledir #Benutzereinstellungen
+cp $profiledir-backup/xulstore.json $profiledir #Symbolleiste
