@@ -25,7 +25,7 @@ cp $profiledir-backup/enigmail.sqlite $profiledir #Cookies
 cp $profiledir-backup/extensions.json $profiledir
 cp $profiledir-backup/extensions.sqlite $profiledir
 cp $profiledir-backup/extension-preferences.json $profiledir
-cp $profiledir-backup/impab.mab #importiertes Adressbuch
+cp $profiledir-backup/impab.mab $profiledir #importiertes Adressbuch
 #cp $profiledir-backup/key3.db $profiledir
 cp $profiledir-backup/key4.db $profiledir #Passwörter
 cp $profiledir-backup/logins.json $profiledir #Passwörter
